@@ -1,21 +1,18 @@
-<?php 
-
+<?php
 namespace App\Controller;
 
-use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
-class AdminController extends AppController{
-//     public $autoRender = false;
-    public function index(){
-        echo "<html><body><h1>Cakphp_prj</h1>";
-        echo "<p>yoshida manabu</p></body></html>";
+class AdminController extends AppController {
+//     public $name = 'Admin';
+    public $autoRender = true;
+    
+    public function initialize():void {
+//         parent::initialize();
+        $this->camps = TableRegistry::get('CampDetailList');
     }
-
-    public function camplist() {
-//      4.0に対応したコード
-        $this->viewBuilder()->disableAutoLayout();
-        $text = "この文字列をViewに出力します。";
-        $this->set('text', $text);
+    public function camplist():void {
+        $data = $this->camps->find('all');
+        $this->set('data',$data);
     }
 }
-?>
