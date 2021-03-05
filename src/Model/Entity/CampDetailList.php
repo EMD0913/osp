@@ -1,18 +1,18 @@
 <?php
+
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
 
-
-class CampDetailList extends Entity {
-//     ƒvƒƒpƒeƒB‚Ì•ÛŒìHCakePHP3‚Å‚ÍAƒf[ƒ^‚ÌŒë‘€ì‚ð–h‚®‚½‚ßEntity‚ÌŽ‚ÂƒvƒƒpƒeƒB‚Ö‚Ì‘ã“ü‰Â”Û‚ðÝ’è‚·‚é $_accessible ‹@\‚ª”õ‚í‚Á‚Ä‚¢‚Ü‚·B
+class CampDetailList extends Entity
+{
     protected $_accessible = [
-// ‘S‚Ä‚ÌƒŒƒR[ƒh‚ð‘}“ü‰Â”\
+        // # ä»»æ„ã®é …ç›®ã«ã‚¢ã‚¯ã‚»ã‚¹å¯èƒ½
         '*' => true,
-//         ID‚Í•ÏX‚Å‚«‚È‚¢
+        // # ãŸã ã—ã€idã¯ã‚¢ã‚¯ã‚»ã‚¹ä¸å¯
         'id' => false,
     ];
 }
 
 
-// CampDetailListTable‚âCampDetailList‚Æ‚¢‚¤ƒtƒ@ƒCƒ‹–¼‚Åƒe[ƒuƒ‹–¼H‚ðŽæ“¾‚µ‚Ä‚¢‚éŠ´‚¶‚È‚Ì‚©H‚à‚µ‚»‚¤‚È‚çƒe[ƒuƒ‹–¼‚ÍCamp_Detail_List‚ÆƒAƒ“ƒ_[ƒo[‚ª‚ ‚Á‚½‚µA‘SŠp‚¾‚ÆŽv‚¤‚Ì‚¾‚ªB
+// å…¨ã¦ã®ãƒ¬ã‚³ãƒ¼ãƒ‰ã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ã«ã‚ãŸã‚Šã€ä¸Šè¨˜ã®æŒ‡ç¤ºã‚’ã—ã¦ã„ã‚‹

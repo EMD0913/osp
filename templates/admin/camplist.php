@@ -1,17 +1,20 @@
 <h1>Camplist</h1>
 <table>
-<!-- tableHeaders()‚Åƒe[ƒuƒ‹ƒwƒbƒ_[‚Ì“à—e‚ğæ“¾‚·‚é -->
+    <!-- tableHeaders()ã§ãƒ†ãƒ¼ãƒ–ãƒ«ãƒ˜ãƒƒãƒ€ãƒ¼ã®å†…å®¹ã‚’å–å¾—ã™ã‚‹ -->
     <?= $this->Html->tableHeaders(
-        ['ƒLƒƒƒ“ƒvê–¼','’nˆæ','ŒûƒRƒ~”','“o˜^“ú','•ÒW','ƒvƒŒƒrƒ…[','‘I‘ğ'],
-    );?>
-    <?= $this->Form->create(null, ['type'=>'post','url'=>['action'=>'camplist']]) ?>
-    <?php foreach ($data as $obj): ?>
-    
-<!--     tableCells()‚Åƒe[ƒuƒ‹ƒZƒ‹‚Ì“à—e‚ğæ“¾‚·‚é -->
+        ['ã‚­ãƒ£ãƒ³ãƒ—å ´å', 'åœ°åŸŸ', 'å£ã‚³ãƒŸæ•°', 'ç™»éŒ²æ—¥æ™‚', 'ç·¨é›†', 'ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼', 'é¸æŠ'],
+    ); ?>
+    <?= $this->Form->create(null, ['type' => 'post', 'url' => ['action' => 'camplist']]) ?>
+    <?php foreach ($data as $obj) : ?>
+
+        <!--     tableCells()ã§ãƒ†ãƒ¼ãƒ–ãƒ«ã‚»ãƒ«ã®å†…å®¹ã‚’å–å¾—ã™ã‚‹ -->
         <?= $this->Html->tableCells(
-//             $obj‚Æ‚Íˆê‘ÌBBŠ´‚¶‚©‚ç‚·‚é‚ÆƒJƒ‰ƒ€‚ğæ“¾‚·‚é‚à‚Ì‚©B‚»‚¤‚·‚é‚Æ‚±‚ÌƒJƒ‰ƒ€‚ğŠi”[‚µ‚Ä‚¢‚éƒe[ƒuƒ‹–¼‚Íˆê‘Ì‚Ç‚±‚Å‹Lq‚³‚ê‚Ä‚¢‚é‚Ì‚©B
-            [$obj['CAMP_DETAIL_SITENAME'],$obj['CAMP_DETAIL_AREA'],$obj['CAMP_DETAIL_REVIEW_NUMBER'],$obj['INSERT_DATE'],$this->Form->button('•ÒW'),$this->Form->button('íœ'),$this->Form->checkbox('')],
+            //             $objã¨ã¯ä¸€ä½“ã€‚ã€‚æ„Ÿã˜ã‹ã‚‰ã™ã‚‹ã¨ã‚«ãƒ©ãƒ ã‚’å–å¾—ã™ã‚‹ã‚‚ã®ã‹ã€‚ãã†ã™ã‚‹ã¨ã“ã®ã‚«ãƒ©ãƒ ã‚’æ ¼ç´ã—ã¦ã„ã‚‹ãƒ†ãƒ¼ãƒ–ãƒ«åã¯ä¸€ä½“ã©ã“ã§è¨˜è¿°ã•ã‚Œã¦ã„ã‚‹ã®ã‹ã€‚
+            [$obj['CAMP_DETAIL_SITENAME'], $obj['CAMP_DETAIL_AREA'], $obj['CAMP_DETAIL_REVIEW_NUMBER'], $obj['INSERT_DATE']->format('Y/m/d H:i:s'), $this->Form->button('ç·¨é›†'), $this->Form->button('ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼'), $this->Form->checkbox('')],
         ); ?>
     <?php endforeach; ?>
     <?= $this->Form->end(); ?>
 </table>
+
+<!-- 3/3/21, 6:18 PM ã®ã‚ˆã†ã«ãªã£ã¦ã„ã¾ã™ãŒã€2020/00/00 0:00:00ã®ã‚ˆã†ãªè¡¨è¨˜ã«å¤‰ãˆã‚‹
+$obj['INSERT_DATE']->format('Y/m/d H:i:s') -->
