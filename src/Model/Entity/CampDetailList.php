@@ -14,5 +14,4 @@ class CampDetailList extends Entity
     ];
 }
 
-
 // 全てのレコードにアクセスするにあたり、上記の指示をしている

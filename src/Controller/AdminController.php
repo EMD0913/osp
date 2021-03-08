@@ -24,4 +24,9 @@ class AdminController extends AppController
         $data = $this->camps->find('all');
         $this->set('data', $data);
     }
+
+    public function campedit(): void{
+
+    }
+
 }
