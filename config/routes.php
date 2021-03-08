@@ -21,6 +21,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
+use App\Controller\AdminController;
 use Cake\Routing\Route\DashedRoute;
 use Cake\Routing\RouteBuilder;
 
@@ -51,7 +52,8 @@ $routes->scope('/', function (RouteBuilder $builder) {
      * to use (in this case, templates/Pages/home.php)...
      */
     $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
-
+    $builder->connect('/pages/*','pages::display');
+    $builder->connect('admin/campedit/[:id]', ['controller'=>'Admin','action' =>'campedit']);
     /*
      * ...and connect the rest of 'Pages' controller's URLs.
      */

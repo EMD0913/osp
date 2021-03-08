@@ -25,8 +25,11 @@ class AdminController extends AppController
         $this->set('data', $data);
     }
 
-    public function campedit(): void{
-
+    public function campedit($id = null): void{
+        if($this->request->is('get') && $id !=null){
+            $data = $this->camps->find()->where(['CAMP_DETAIL_SITE_ID', $id])->toArray();
+            $this->set('data', $data);
+            }
     }
 
 }
