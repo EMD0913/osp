@@ -1,14 +1,14 @@
 <h1>Camplist</h1>
 <p>
 <table>
-    <?= $this->Form->create(null, ['type' => 'post', 'url' => ['controller' => 'edit', 'action' => 'Form1']]) ?>
+    <?= $this->Form->create($data, ['type' => 'post', 'url' => ['controller' => 'Admin', 'action' => 'campedit']]) ?>
     <tr>
         <th>
             <h3><?= $this->Html->div("head", "キャンプ場名", []); ?></h3>
         </th>
     </tr>
     <tr>
-        <th><?= $this->Form->input('CAMP_DETAIL_SITENAME', ['type' => 'text']) ?></th>
+        <th><?= $this->Form->input('CAMP_DETAIL_SITENAME', ['type' => 'text', 'value' => $data['CAMP_DETAIL_SITENAME']]) ?></th>
     </tr>
     <tr>
         <th>
@@ -102,36 +102,16 @@
     </tr>
     <tr>
         <td>見どころ</td>
-        <th>複数のチェックボックスの作り方がわからない</th>
+        <th><?= $this->Form->input('CAMP_DETAIL_HIGHLIGHT', ['type' => 'text']) ?></th>
     </tr>
     <tr>
         <td>雰囲気</td>
-        <th>
-            <?= $this->Form->checkbox('CAMP_DETAIL_ATMOSPHERE', ['id' => 'atomos1']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_ATMOSPHERE', '海'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_ATMOSPHERE', ['id' => 'atomos2']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_ATMOSPHERE', '川'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_ATMOSPHERE', ['id' => 'atomos3']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_ATMOSPHERE', '滝'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_ATMOSPHERE', ['id' => 'atomos4']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_ATMOSPHERE', '湖'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_ATMOSPHERE', ['id' => 'atomos5']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_ATMOSPHERE', '高原'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_ATMOSPHERE', ['id' => 'atomos6']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_ATMOSPHERE', '林間'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_ATMOSPHERE', ['id' => 'atomos7']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_ATMOSPHERE', '高台'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_ATMOSPHERE', ['id' => 'atomos8']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_ATMOSPHERE', '草原'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_ATMOSPHERE', ['id' => 'atomos9']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_ATMOSPHERE', '公園'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_ATMOSPHERE', ['id' => 'atomos10']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_ATMOSPHERE', '山奥'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_ATMOSPHERE', ['id' => 'atomos11']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_ATMOSPHERE', '富士山'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_ATMOSPHERE', ['id' => 'atomos12']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_ATMOSPHERE', '夜景'); ?>
-        </th>
+        <td>
+        <?php foreach ($atmospheres as $atmosphere) : ?>
+                <span><?= $this->Form->checkbox('CAMP_DETAIL_ATMOSPHERE', ['value' => $atmosphere->CAMP_ATMOSPHERE_ID]); ?><?= $atmosphere->CAMP_ATMOSPHERE ?></span>
+            <?php endforeach; ?>
+        </td>
+        </td>
     </tr>
     <tr>
         <th>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Routes configuration.
  *
@@ -21,7 +22,6 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-use App\Controller\AdminController;
 use Cake\Routing\Route\DashedRoute;
 use Cake\Routing\RouteBuilder;
 
@@ -42,6 +42,7 @@ use Cake\Routing\RouteBuilder;
  * inconsistently cased URLs when used with `:plugin`, `:controller` and
  * `:action` markers.
  */
+
 /** @var \Cake\Routing\RouteBuilder $routes */
 $routes->setRouteClass(DashedRoute::class);
 
@@ -52,12 +53,13 @@ $routes->scope('/', function (RouteBuilder $builder) {
      * to use (in this case, templates/Pages/home.php)...
      */
     $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
-    $builder->connect('/pages/*','pages::display');
-    $builder->connect('admin/campedit/[:id]', ['controller'=>'Admin','action' =>'campedit']);
+
     /*
      * ...and connect the rest of 'Pages' controller's URLs.
      */
+    
     $builder->connect('/pages/*', 'Pages::display');
+    $builder->connect('/admin/campedit/[:id]', ['controller' => 'Admin', 'action' => 'campedit']);
 
     /*
      * Connect catchall routes for all controllers.
