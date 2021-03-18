@@ -69,36 +69,9 @@
     </tr>
     <tr>
         <td>施設タイプ</td>
-        <th>
-            <?= $this->Form->checkbox('CAMP_DETAIL_FACILITY_TYPE', ['id' => 'facility1']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_FACILITY_TYPE', 'ロッジ・ログハウス・コテージ'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_FACILITY_TYPE', ['id' => 'facility2']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_FACILITY_TYPE', 'バンガロー'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_FACILITY_TYPE', ['id' => 'facility3']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_FACILITY_TYPE', 'キャビン （ケビン）'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_FACILITY_TYPE', ['id' => 'facility4']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_FACILITY_TYPE', '区画サイト'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_FACILITY_TYPE', ['id' => 'facility5']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_FACILITY_TYPE', 'フリーサイト'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_FACILITY_TYPE', ['id' => 'facility6']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_FACILITY_TYPE', 'オートキャンプサイト'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_FACILITY_TYPE', ['id' => 'facility7']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_FACILITY_TYPE', 'ソロ専用サイト'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_FACILITY_TYPE', ['id' => 'facility8']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_FACILITY_TYPE', '柵付きサイト'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_FACILITY_TYPE', ['id' => 'facility9']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_FACILITY_TYPE', 'トレーラーハウス'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_FACILITY_TYPE', ['id' => 'facility10']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_FACILITY_TYPE', 'ティピー'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_FACILITY_TYPE', ['id' => 'facility11']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_FACILITY_TYPE', 'ツリーハウス・その他'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_FACILITY_TYPE', ['id' => 'facility12']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_FACILITY_TYPE', 'グランピング'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_FACILITY_TYPE', ['id' => 'facility13']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_FACILITY_TYPE', '初心者向け'); ?>
-            <?= $this->Form->checkbox('CAMP_DETAIL_FACILITY_TYPE', ['id' => 'facility14']); ?>
-            <?= $this->Form->label('CAMP_DETAIL_FACILITY_TYPE', '玄人向け'); ?>
-        </th>
+        <td>
+
+        </td>
     </tr>
     <tr>
         <td>見どころ</td>
@@ -107,8 +80,11 @@
     <tr>
         <td>雰囲気</td>
         <td>
-        <?php foreach ($atmospheres as $atmosphere) : ?>
-                <span><?= $this->Form->checkbox('CAMP_DETAIL_ATMOSPHERE', ['value' => $atmosphere->CAMP_ATMOSPHERE_ID]); ?><?= $atmosphere->CAMP_ATMOSPHERE ?></span>
+            <?php foreach ($atmospheres as $atmosphere) : ?>
+                <span>
+                    <?= $this->Form->checkbox('CAMP_DETAIL_ATMOSPHERE', ['value' => $atmosphere->CAMP_ATMOSPHERE_ID]); ?>
+                    <?= $atmosphere->CAMP_ATMOSPHERE ?>
+                </span>
             <?php endforeach; ?>
         </td>
         </td>

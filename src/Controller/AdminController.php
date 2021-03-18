@@ -33,5 +33,8 @@ class AdminController extends AppController
 
         $atmospheres = $this->atmosphereTypes->find('all')->toArray();
         $this->set('atmospheres', $atmospheres);
+
+        // $sisetsus = $this->sisetsuTypes->find('all')->toArray();
+        // $this->set('sisetsus', $sisetsus);
     }
 }
